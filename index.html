@@ -1,0 +1,755 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>s4mieL's portfol!!! hoiii :3</title>
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+    <link href="assets/images/O-O temmie.gif" rel="icon">
+    <link rel="stylesheet" href="assets/styles/styling-framework.css">
+    <style type="text/css">
+        :root {
+            --gold: #cdb665;
+            --dark-gold: #a8933d;
+            --light-gold: #e8d48a;
+            --cream: #f5eec8;
+            --brown: #5c3d1e;
+            --red: #c0392b;
+            --white: #fffdf0;
+            --shadow: rgba(92, 61, 30, 0.4);
+            --neon-pink: #ff006e;
+            --neon-yellow: #ffbe0b;
+            --neon-cyan: #00f5ff;
+            --neon-green: #06d6a0;
+            --neon-purple: #8338ec;
+            --neon-orange: #fb5607;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            background-color: var(--gold);
+            color: var(--brown);
+            font-family: 'Press Start 2P', monospace;
+            cursor: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='32' height='32' viewBox='0 0 32 32'%3E%3Ctext y='28' font-size='28'%3E🐾%3C/text%3E%3C/svg%3E") 0 0, auto;
+            overflow-x: hidden;
+        }
+
+        /*SCANLINE TEXTURE*/
+        body::before {
+            content: '';
+            position: fixed;
+            inset: 0;
+            background: repeating-linear-gradient(
+                0deg,
+                transparent,
+                transparent 3px,
+                rgba(92, 61, 30, 0.04) 3px,
+                rgba(92, 61, 30, 0.04) 4px
+            );
+            pointer-events: none;
+            z-index: 9998;
+        }
+
+        .temmie-shop-background {
+            content: "";
+            
+            top: 50px;
+            left: 0;
+            width: 100%;       
+            height: 60vh;      
+            background: url("assets/images/temmie-shop.jpg") no-repeat center;
+            background-size: cover;
+            z-index: -1;      
+        }
+
+        
+        h1 {
+            animation: glitch 0.3s infinite;
+            z-index: 2;
+            text-align: center;
+            margin-top: 100px;
+        }
+
+        .typewriter {
+            overflow: hidden;
+            border-right: .15em solid red;
+            white-space: nowrap;
+            animation: typing 3s steps(30, end), blink-caret .75s step-end infinite;
+            z-index: 2;
+        }
+
+        .float-tem {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            z-index: 500;
+            animation: bounce-float 1s step-end infinite;
+            cursor: pointer;
+            image-rendering: pixelated;
+            width: 56px;
+        }
+
+        @media (max-width: 700px) {
+            #about .about-grid { grid-template-columns: 1fr; }
+            nav { padding: 14px 20px; }
+            .nav-links { gap: 14px; }
+            .nav-links a { font-size: 6px; }
+            .section { padding: 60px 6vw; }
+        }
+
+        @media (max-width: 480px) {
+            .temmie-shop-background {
+                height: 60vh; /* shrink height a bit on mobile */
+                background-position: center center; /* keep shop centered */
+                width: 100vw;
+            }
+        }
+
+        /* animeshunn uwu*/
+        @keyframes glitch {
+            0%, 90%, 100% { text-shadow: none; transform: none; }
+            92% { text-shadow: 3px 0 var(--red); transform: translateX(-2px); }
+            94% { text-shadow: -3px 0 #4499ff; transform: translateX(2px); }
+            96% { text-shadow: 3px 0 var(--red); transform: translateX(-1px); }
+            98% { text-shadow: none; transform: none; }
+        }
+
+        @keyframes bounce {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-6px); }
+        }
+
+        @keyframes bounce-float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-8px); }
+        }
+
+        @keyframes wobble {
+            0%, 100% { transform: rotate(-2deg); }
+            50% { transform: rotate(2deg); }
+        }
+
+        @keyframes blink {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0; }
+        }
+
+        @keyframes spin-slow {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+
+        @keyframes fadeSlide {
+            from { opacity: 0; transform: translateY(6px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        @keyframes shake {
+            0%,100% { transform: translate(0,0) rotate(0); }
+            10% { transform: translate(-6px, 4px) rotate(-3deg); }
+            30% { transform: translate(6px,-4px) rotate(3deg); }
+            50% { transform: translate(-4px, 4px) rotate(-2deg); }
+            70% { transform: translate(4px,-4px) rotate(2deg); }
+            90% { transform: translate(-2px, 2px) rotate(-1deg); }
+        }
+
+        @keyframes typing {
+            from { width: 0 }
+            to { width: 100% }
+        }
+
+        @keyframes blink-caret {
+            from, to { border-color: transparent }
+            50% { border-color: rgb(25, 25, 25); }
+        }
+
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+
+        @keyframes tem_having_adhd_xd {
+            0%  { transform: translate(0px, 0px) rotate(0deg); }
+            25% { transform: translate(2px, -2px) rotate(-1deg); }
+            50% { transform: translate(-2px, 2px) rotate(1deg); }
+            75% { transform: translate(2px, 2px) rotate(0deg); }
+            100%{ transform: translate(0px, 0px) rotate(0deg); }
+        }
+
+        @keyframes violentShake {
+            0%  { transform: translate(0, 0) rotate(0); }
+            10% { transform: translate(-8px, 6px) rotate(-4deg); }
+            20% { transform: translate(8px, -6px) rotate(4deg); }
+            30% { transform: translate(-10px, 4px) rotate(-5deg); }
+            40% { transform: translate(10px, -4px) rotate(5deg); }
+            50% { transform: translate(-8px, 6px) rotate(-4deg); }
+            60% { transform: translate(8px, -6px) rotate(4deg); }
+            70% { transform: translate(-10px, 4px) rotate(-5deg); }
+            80% { transform: translate(10px, -4px) rotate(5deg); }
+            90% { transform: translate(-6px, 3px) rotate(-3deg); }
+            100%{ transform: translate(0, 0) rotate(0); }
+        }
+
+        .shake {
+            animation: shake 0.45s;
+        }
+
+        #end-animation {
+            position: relative;
+            width: 300px;
+            height: 300px;
+            margin: 50px auto;
+            z-index: 1;
+        }
+
+        #nervy-temmie {
+
+            position: absolute;
+            top: 54%;
+            bottom: 0;
+            text-align: center;
+        }
+
+        #nervy-temmie img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;   /* keeps full image visible */
+            display: block;
+        }
+
+        .nervy-temmie-adj {
+            position: absolute;
+            top: 54%;
+            bottom: 0;
+            right: 50%;
+            left: 20%;
+            height: 75%;
+            width: 75%;
+        }
+
+        .happi-temmie-adj {
+            position: absolute;
+            top: 54%;
+            bottom: 0;
+            right: 50%;
+            left: 20%;
+            height: 75%;
+            width: 75%;
+        }
+
+        .fade-in {
+            animation: fadeIn 1s ease-in;
+        }
+
+        .shake-burst {
+            animation: violentShake 0.45s infinite;
+        }
+
+        .tem_having_adhd_xd {
+            animation: tem_having_adhd_xd 0.3s infinite;
+        }
+
+        .tem_so_nervy {
+            animation: tem_having_adhd_xd 0.3s infinite;
+        }
+
+    </style>
+</head>
+<body>
+    <div id="introOverlay"> 
+
+        <img width="160" src="https://raw.githubusercontent.com/s4mieL/portfolio/refs/heads/main/images/happi-tem.png" class="tem_having_adhd_xd">
+        <br><br>
+        <div class="warning-box">
+            <p class="big">!! ADHD WARNING !!</p>
+            <p>dis site contain many temmie<br>
+               excessive fluf & pixel energy<br>
+               possible jumpscares of pride</p>
+        </div>
+        <p class="click-hint" style="color: var(--red);">[ click anywhere 2 enter ]</p>
+    </div>
+
+    <!-- the top thingy idk -->
+    <nav>
+        <a href="#hero" class="nav-logo">s4mieL~</a>
+        <ul class="nav-links">
+            <li><a href="#about">Abt</a></li>
+            <li><a href="#skills">skeel</a></li>
+            <li><a href="#projects">prajek</a></li>
+            <li><a href="#contact">Contak</a></li>
+        </ul>
+    </nav>
+    <div id="myHome"></div>
+    <div class="temmie-shop-background">
+        <div id="end-animation">
+            <div>
+                <img id="nervy-temmie" src="assets/images/temmie_animation.gif">
+            </div>
+        </div>
+    </div>
+    <h1 hidden>Hoiii!!!</h1> <!-- for sufer sicreet ister eggy hehe-->
+    <br>
+    <p id="message" style="font-size: 19px; text-align: center;">
+        "welcom to my portfol!!! plz enjoy ur stay!!!"
+    </p>
+    <br><br>
+    <br>
+    <div class="randmsg-dialog-box">
+        <p id="randomMessage" style="color: rgb(0, 0, 0); font-family: 'Press Start 2P', monospace; font-size: 13px; margin-top: 20px; margin-bottom: 20px; text-align: center;"></p>
+        <a href="https://paypal.me/bknwa195#buy-me-coffee-:3" class="tem-colleg">pay for tem colleg :3</a>
+    </div>
+    <div class="tem-divider">~ ★ TEM FLAKES ★ ~ ★ ~ TEM FLAKES ★ ~ ★ ~</div>
+
+    <!-- MAIN -->
+    <section id="hero">
+        <div class="hero-temmie-row">
+            <img src="assets/images/reverted-floating-temmie.png" alt="temmie">
+            <img src="assets/images/floating-temmie.png" alt="temmie" style="animation-delay:0.2s">
+            <img src="assets/images/happi-floating-temmie.png" alt="temmie" style="animation-delay:0.4s">
+        </div>
+
+        <h1>hOI!!! i'm s4mieL!!!</h1>
+        <p class="hero-subtitle">full stac dev!!! securiti reserch!!! api buildr!!!<br>i mak things work — and smtimes brek tem 2 lern!!!</p>
+
+        <div class="hero-dialog-box">
+            <div class="dialog-name">* TEM *</div>
+            <p class="dialog-text">
+                welcom 2 tem portfol!!!<br>
+                tem work very hard on dis!!!<br>
+                tem hop u lik wat u see!!!! 
+            </p>
+        </div>
+
+        <div class="hero-tags">
+            <span class="tag">full stac dev</span>
+            <span class="tag">web devloper</span>
+            <span class="tag">securiti anlyst</span>
+            <span class="tag">api developr</span>
+        </div>
+
+        <a href="#projects" class="btn">view tem work!!!</a>
+    </section>
+
+    <div class="tem-divider">~ ★ TEM FLAKES ★ ~ ★ ~ TEM FLAKES ★ ~ ★ ~</div>
+
+    <!-- ABOUT -->
+    <section id="about" class="section">
+        <div class="section-header">
+            <h2 class="section-title">abt me!!!</h2>
+            <p class="section-subtitle">who is dis gai??? find out here!!!</p>
+        </div>
+        <div class="about-grid">
+            <div class="about-dialog">
+                <p>* TEM SPEEK *</p>
+                <p>
+                    hoiii!!! tem is s4mieL!!!<br>
+                    full-stack dev & security researcher!!!<br>
+                    tem build websites, APIs, and solve big problems!!!<br>
+                    tem is very proud of dis portfol!!!
+                </p>
+                <p>
+                    tem also learn many new tech everyday!!!<br>
+                    code, hack, secure, and automate stuff is what tem loves!!!<br>
+                    always improving skillz to make better things for people!!!
+                </p>
+            </div>
+            <div class="about-stats">
+                <div class="stat-row">
+                    <span class="stat-label">HP</span>
+                    <div class="stat-bar-bg"><div class="stat-bar-fill" style="width:92%"></div></div>
+                    <span>92</span>
+                </div>
+                <div class="stat-row">
+                    <span class="stat-label">ATK (codin)</span>
+                    <div class="stat-bar-bg"><div class="stat-bar-fill" style="width:88%"></div></div>
+                    <span>88</span>
+                </div>
+                <div class="stat-row">
+                    <span class="stat-label">DEF (securit)</span>
+                    <div class="stat-bar-bg"><div class="stat-bar-fill" style="width:80%"></div></div>
+                    <span>80</span>
+                </div>
+                <div class="stat-row">
+                    <span class="stat-label">LOVE (fluf)</span>
+                    <div class="stat-bar-bg"><div class="stat-bar-fill" style="width:99%"></div></div>
+                    <span>99</span>
+                </div>
+                <div class="stat-row">
+                    <span class="stat-label">GOLD</span>
+                    <div class="stat-bar-bg"><div class="stat-bar-fill" style="width:40%"></div></div>
+                    <span>???</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="tem-divider">~ ★ ~ ★ ~ ★ ~ ★ ~ ★ ~ ★ ~ ★ ~ ★ ~</div>
+
+    <!-- SKILLS  -->
+    <section id="skills" class="section">
+        <div class="section-header">
+            <h2 class="section-title">skeelz!!!</h2>
+            <p class="section-subtitle">tem learn many thing!!! brain tired but worth it!!!</p>
+        </div>
+        <div class="skills-grid">
+            <div class="skill-card"><span class="skill-icon">🌐</span><p class="skill-name">html / css<br>tem kno dis!</p></div>
+            <div class="skill-card"><span class="skill-icon">⚡</span><p class="skill-name">javascript<br>many confus but ok</p></div>
+            <div class="skill-card"><span class="skill-icon">🐍</span><p class="skill-name">python<br>sneki languag</p></div>
+            <div class="skill-card"><span class="skill-icon">🔌</span><p class="skill-name">api buildin<br>tem connect thing!</p></div>
+            <div class="skill-card"><span class="skill-icon">🔒</span><p class="skill-name">securiti<br>tem protecc</p></div>
+            <div class="skill-card"><span class="skill-icon">🗄️</span><p class="skill-name">PHP & SQL<br>data go brrrr</p></div>
+        </div>
+    </section>
+
+    <div class="tem-divider">~ TEM SHOP ★ TEM SHOP ★ TEM SHOP ~ ★ ~</div>
+
+    <!-- PROJECTS -->
+    <section id="projects" class="section">
+        <div class="section-header">
+            <h2 class="section-title">prajekts!!!</h2>
+            <p class="section-subtitle">tem work very hrad on dese!!! pls luk!!!</p>
+        </div>
+        <div class="projects-grid">
+            <div class="project-card">
+                <p class="project-tag">// beri kool prajekt </p>
+                <h3 class="project-title">Digital AI Clone</h3>
+                <p class="project-desc">Using AI to use your social medias when you feel like taking a break. Hehe :3</p>
+                <div class="project-links">
+                    <a href="https://github.com/s4mieL/AI-Digital-Clone" class="project-link">↗ github</a>
+                </div>
+            </div>
+            <div class="project-card">
+                <p class="project-tag">// another kool prajek</p>
+                <h3 class="project-title">Virtual AI Assistant (ISAW)</h3>
+                <p class="project-desc">dis one took 1000 year!!! tem survive!!! it do many thing!!!</p>
+                <div class="project-links">
+                    <a href="https://github.com/s4mieL/ISAWv2-AI-Assistant-" class="project-link">↗ github</a>
+                </div>
+            </div>
+            <div class="project-card">
+                <p class="project-tag">// kool things</p>
+                <h3 class="project-title">Security AI Monitoring tool</h3>
+                <p class="project-desc">Better than manual monitoring :3</p>
+                <div class="project-links">
+                    <a href="https://github.com/s4mieL/ISAWv1-AI-Security-Monitoring-Tool" class="project-link">↗ github</a>
+                </div>
+            </div>
+            <div class="project-card">
+                <p class="project-tag">// other kool tings</p>
+                <h3 class="project-title">OSINT TOOL (Intel-x BOT)</h3>
+                <p class="project-desc">Contributed as an API developer to the IntelX Discord bot, integrating endpoints and improving functionality.</p>
+                <div class="project-techs">
+                    <span class="tech-badge">Stressed Tested The Bot</span>
+                    <span class="tech-badge">Developed and Contributed part of their structure</span>
+                </div>
+                <div class="project-links">
+                    <a href="https://discord.gg/intel-x" class="project-link">↗ live</a>
+                </div>
+            </div>
+            <div class="project-card">
+                <p class="project-tag">// other things</p>
+                <h3 class="project-title">And more!</h3>
+                <p class="project-desc">Others</p>
+                <div class="project-techs">
+                    <span class="tech-badge">tech 1</span>
+                    <span class="tech-badge">tech 2</span>
+                </div>
+                <div class="project-links">
+                    <a href="#" class="project-link">↗ live</a>
+                    <a href="#" class="project-link">↗ github</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="tem-divider">~ ★ ~ ★ ~ ★ ~ ★ ~ ★ ~ ★ ~ ★ ~ ★ ~</div>
+
+    <!-- ─── CONTACT ─── -->
+    <section id="contact" class="section">
+        <div class="section-header">
+            <h2 class="section-title">contak tem!!!</h2>
+            <p class="section-subtitle">pls hir tem… tem giv 200% effort!!!</p>
+        </div>
+        <div class="contact-box">
+            <div class="contact-dialog">
+                <p>
+                    * tem dream job…<br>
+                    * maybe u giv??? 👀<br>
+                    * tem promis 2 work very hrad!!!<br>
+                    * also tem bring tem flakes 2 offis
+                </p>
+            </div>
+            <div class="contact-links">
+                <a href="mailto:sam24playz@gmail.com" class="btn" style="font-size:7px">✉ email tem</a>
+                <a href="https://github.com/s4mieL" class="btn" style="font-size:7px; background: var(--dark-gold);">⭐ Github</a>
+                <a href="https://facebook.com/sammd4nn.195" class="btn" style="font-size:7px; background: #1877F2;">💼 Facebook</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ─── FOOTER ─── -->
+    <footer>
+        <p>* made with determinashun by s4mieL!!! *</p>
+        <p>© 2025 — tem flakes not included</p>
+        <p style="margin-top:8px; color: var(--gold);">thank u 4 visiting tem portfol!!! come bak anytim!!!</p>
+    </footer>
+    <audio src="assets/music/Undertale - Sound Effects.mp3" id="shopsound" preload="auto" hidden></audio>
+    <audio id="bgMusic" src="assets/music/Undertale - Tem Shop [Remix].mp3" preload="auto" loop></audio>
+    <audio id="adhdmusic" src="assets/music/UNDERTALE Tem Shop Remix (NEW! Music Video by cheezeEGGSTREEME) (mp3cut.net).mp3" preload="auto" loop></audio>
+
+    <!-- floating temmie hehe :3 -->
+    <img class="float-tem" id="floatTem"
+         src="assets/images/floating-temmie.png"
+         title="hoiii!!!">
+    <script>
+        const messages = [
+            "tem worked very hard on dis!!! many skill!!! wow!!!",
+            "u look at project!!! tem proud of dis one!!!",
+            "tem learn many thing!!! brain very tired but proud!!!",
+            "dis project took 1000 year!!! tem survive!!!",
+            "tem code… tem cry… tem finish!!!",
+            "dis part show tem coding power!!! very impress!!!",
+            "tem hope u lik!!! took many hour and tem fluf!!!",
+            "click around!!! portfolio full of tem talent!!!",
+            "if u hir tem… tem wil giv 200% effort!!!",
+            "thank u for visit tem portfol!!! come bak anytim!!!",
+            "portfolio built with determinashun!!!",
+            "plz admire tem hard work!!!",
+            "tem dream job… maybe u giv??? 👀",
+            "thank u for touring tem world!!!"
+        ];
+
+        const messageElement = document.getElementById("randomMessage");
+
+        function showRandomMessage() {
+            
+            const randomIndex = Math.floor(Math.random() * messages.length);
+            const message = messages[randomIndex];
+            messageElement.textContent = message;
+
+            messageElement.classList.remove("fade-in");
+            void messageElement.offsetWidth; 
+            messageElement.classList.add("fade-in");
+
+            const randomTime = Math.floor(Math.random() * 3000) + 4000;
+            setTimeout(showRandomMessage, randomTime);
+        }
+        showRandomMessage();
+
+    </script>
+    <script>
+        // nervy temmie wen u hover uhm the colleg button thingy hehe
+        const btn = document.querySelector(".tem-colleg");
+        const temmyyy = document.getElementById("nervy-temmie");
+        const sound = document.getElementById("shopsound");
+        const textty = document.getElementById("message");
+
+        const shucks_msg = [
+            "aww :C",
+            "oh nooo…",
+            "tem sad now…",
+            "tem try… but nooo…",
+            "dis not fun…",
+            "tem heart hurt…",
+            "uwu why…",
+            "tem feel lonely…",
+            "s-s-sorry…",
+            "tem cry a lil…",
+            "ohhh fluff…",
+            "tem disappoint…",
+            "nooo… not dis…",
+            "aw man…",
+            "tem wanna nap…",
+            "tem frowny face :<"
+        ];
+
+        function random_shucks_msg() {
+            const randomMSG = Math.floor(Math.random() * shucks_msg.length);
+            const msg = shucks_msg[randomMSG];
+
+            textty.textContent = msg;
+            
+        }
+
+        btn.addEventListener("mouseenter", () => {
+            temmyyy.classList.add("shake-burst");
+            temmyyy.src = "assets/images/sweating-nervous.gif";
+            temmyyy.classList.add("nervy-temmie-adj");
+            textty.innerText = "PLZ PLZ PLZ PLZ PLZ PLZ PLZ!!!!";
+        });
+
+        btn.addEventListener("mouseleave", () => {
+            temmyyy.classList.remove("shake-burst");
+            temmyyy.src = "assets/images/temmie_animation.gif";
+            temmyyy.classList.remove("nervy-temmie-adj");
+            random_shucks_msg();
+
+            setTimeout(() => {
+                textty.innerText = "welcom to my portfol!!! plz enjoy ur stay!!!";
+            },700);
+        });
+
+        btn.addEventListener("click", () => {
+            temmyyy.classList.remove("shake-burst");
+            temmyyy.src = "assets/images/hoi-one-eye-closed.gif";
+            temmyyy.classList.remove("nervy-temmie-adj");
+            temmyyy.classList.add("happi-temmie-adj"); // make sure to return to original position by removing this class
+            //play sound effect
+            sound.currentTime = 0;
+            sound.play();
+            temmyyy.classList.remove("happi-temmie-adj");
+            textty.innerText = "YEZ!! TEMMIE HAPPI!!! :D";
+            
+            setTimeout(() => {
+                textty.innerText = "welcom to my portfol!!! plz enjoy ur stay!!!";
+            },2000);
+            
+        })
+
+        // for floating temmie xd
+        const floatTem = document.getElementById("floatTem");
+        floatTem.addEventListener("click", () => {
+            floatTem.classList.remove("shake");
+            void floatTem.offsetWidth;
+            floatTem.classList.add("shake");
+            rotateMsgs();
+        });
+
+        //temmie nervous hehe
+        const tem = document.getElementById("nervy-temmie");
+
+        function burstShake() {
+        tem.classList.add("tem_so_nervy");
+
+        setTimeout(() => {
+            tem.classList.remove("tem_so_nervy");
+        }, 450);
+        }
+
+        setInterval(burstShake, 5000);
+
+        // my temmie animation :3
+        const text = document.getElementById("message");
+
+        function shakeymakey() {
+            text.classList.add("tem_having_adhd_xd");
+        }
+
+        setInterval(shakeymakey, 5000);
+
+        let eastereggies = false;
+
+        function eastereggy() {
+            return Math.random() < 0.1; // 10% chance this will happen if not 0.3 please don't forget to change it back :3
+        }
+
+
+
+        function adhdmeltdown() {
+
+            function loadMeltdown() {
+                const link = document.createElement("link");
+                link.rel = "stylesheet";
+                link.href = "assets/styles/adhd-meltdown.css";
+
+                document.head.appendChild(link);
+
+                const linkscript = document.createElement("script");
+                linkscript.src = "assets/scripts/adhd-metldown.js";
+                
+                document.body.appendChild(linkscript);
+            }
+
+            // Start musix
+            const music = document.getElementById("adhdmusic");
+            music.volume = 0.7;
+            music.play();
+
+            if (eastereggies) {
+
+                loadMeltdown();
+
+                const allH1 = document.getElementsByTagName("h1");
+                const allH2 = document.getElementsByTagName("h2");
+                const alltemdiv = document.getElementsByClassName("tem-divider");
+                const allIMG = document.getElementsByTagName("img");
+                const allAnchor = document.getElementsByTagName("a");
+
+                for (let a of allAnchor) {
+                    a.style.display = "block";
+                    a.style.animation = "violentShake 0.45s infinite";
+                    a.style.animation = "glitch 4s infinite;";
+                }
+
+                for (let h of allH1) {
+                    h.style.display = "block";
+                    h.style.animation = "violentShake 0.45s infinite";
+                    h.style.animation = "glitch 4s infinite;";
+                    h.style.fontSize = "50px";
+                }
+                for (let h of allH2) {
+                    h.style.display = "block";
+                    h.style.animation = "violentShake 0.45s infinite";
+                    h.style.animation = "glitch 4s infinite;";
+                    h.style.fontSize = "50px";
+                }
+                for (let d of alltemdiv) {
+                    d.style.display = "block";
+                    d.style.animation = "glitch 4s infinite;";
+                    d.innerText = "TOO MUCHH CAFFEINEEE TOO MUCHHH KOPIIIII TOO MUCKK";
+                }
+                for (let imgs of allIMG) {
+                    imgs.style.display = "block";
+                    imgs.style.animation = "violentShake 0.45s infinite";
+                    imgs.style.animation = "glitch 4s infinite;";
+                }
+        
+            }
+        }
+
+        // fopr ainmation
+        document.getElementById("introOverlay").addEventListener("click", function () {
+            const overlay = this;
+            overlay.style.transition = "opacity 1s ease-out";
+            overlay.style.opacity = 0;
+            setTimeout(() => overlay.remove(), 1000);
+            document.getElementById('message').classList.add('typewriter');
+
+            if (eastereggy()) {
+                console.log("IT JUST HAPPENED!");
+                eastereggies = true;
+                adhdmeltdown();
+
+            }
+
+            else {
+                // Start musix
+            const music = document.getElementById("bgMusic");
+            music.volume = 0.4;
+            music.play();
+            }
+
+            
+        });
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(e => {
+                if (e.isIntersecting) {
+                    e.target.querySelectorAll('.stat-bar-fill').forEach(bar => {
+                        bar.style.animation = 'none';
+                        void bar.offsetWidth;
+                        bar.style.animation = '';
+                    });
+                }
+            });
+        }, { threshold: 0.3 });
+        const aboutSection = document.getElementById("about");
+        if (aboutSection) observer.observe(aboutSection);
+    </script>
+    
+</body>
+</html>
+
